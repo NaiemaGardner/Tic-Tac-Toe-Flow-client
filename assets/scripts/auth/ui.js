@@ -4,6 +4,7 @@ const store = require('../store')
 
 const signUpSuccess = function () {
   $('#attempt').text('Sign up was successful! Sign in now to play.')
+  $('#sign-up')[0].reset()
 }
 const signUpFailure = function () {
   $('#attempt').text('Sign up attempt failed. Please try again.')
@@ -17,6 +18,7 @@ const signInSuccess = function (response) {
   store.user = response.user
   console.log('store: ', store)
   console.log('token: ', store.user.token)
+  $('#sign-in')[0].reset()
 }
 const signInFailure = function () {
   $('#attempt').text('Sign in attempt failed. Please try again.')
@@ -24,14 +26,15 @@ const signInFailure = function () {
 
 const changePasswordSuccess = function () {
   $('#auth-attempt').text('Your password has been updated successfully.')
+  $('#change-password')[0].reset()
 }
 const changePasswordFailure = function () {
   $('#auth-attempt').text('Failed to update your password. Please try again.')
 }
 
 const signOutSuccess = function () {
-  $('#authenticated').hide()
   $('#unauthenticated').show()
+  $('#authenticated').hide()
   $('#auth-attempt').text('User signed out. See you soon!')
   store.user = null
 }
