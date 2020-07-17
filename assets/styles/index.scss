@@ -1,1 +1,21 @@
 @import '~bootstrap/scss/bootstrap';
+
+$table-color: $#000000;
+
+td {
+  height: 100px;
+  width: 100px;
+}
+
+table {
+  margin: 5px auto;
+}
+
+.vertical {
+  border-left: 2px solid $table-color;
+  border-right: 2px solid $table-color;
+}
+.horizontal {
+  border-top: 2px solid $table-color;
+  border-bottom: 2px solid $table-color;
+}
