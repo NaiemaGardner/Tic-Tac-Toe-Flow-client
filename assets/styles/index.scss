@@ -11,12 +11,38 @@ table {
   margin: 5px auto;
 }
 
-.vertical {
-  border-left: 2px solid $table-color;
+.zero {
+  border-bottom: 2px solid $table-color;
   border-right: 2px solid $table-color;
 }
 
-.horizontal {
+.one {
   border-bottom: 2px solid $table-color;
-  border-top: 2px solid $table-color;
+  border-right: 2px solid $table-color;
+}
+
+.two {
+  border-bottom: 2px solid $table-color;
+}
+
+.three {
+  border-bottom: 2px solid $table-color;
+  border-right: 2px solid $table-color;
+}
+
+.four {
+  border-bottom: 2px solid $table-color;
+  border-right: 2px solid $table-color;
+}
+
+.five {
+  border-bottom: 2px solid $table-color;
+}
+
+.six {
+  border-right: 2px solid $table-color;
+}
+
+.seven {
+  border-right: 2px solid $table-color;
 }

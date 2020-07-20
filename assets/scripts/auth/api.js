@@ -1,7 +1,7 @@
 'use strict'
 
-const config = require('../config')
 const store = require('../store')
+const config = require('../config')
 
 const signUp = function (formData) {
   return $.ajax({
@@ -33,11 +33,11 @@ const changePassword = function (formData) {
 
 const signOut = function () {
   return $.ajax({
-    url: config.apiUrl + '/sign-out',
-    method: 'DELETE',
     headers: {
       Authorization: 'Bearer ' + store.user.token
-    }
+    },
+    url: config.apiUrl + '/sign-out',
+    method: 'DELETE'
   })
 }
 

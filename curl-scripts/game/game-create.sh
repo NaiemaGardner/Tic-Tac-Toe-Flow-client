@@ -1,10 +1,9 @@
-# create-game.sh
+# game-create.sh
 
-curl "https://tic-tac-toe-api-development.herokuapp.com/game" \
+curl "https://tic-tac-toe-api-development.herokuapp.com/games" \
   --include \
   --request POST \
   --header "Authorization: Bearer ${TOKEN}" \
-  --header "Content-Type: application/json" \
   --data '{}'
 
 echo

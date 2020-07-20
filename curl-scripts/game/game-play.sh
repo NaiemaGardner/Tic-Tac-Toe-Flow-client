@@ -1,6 +1,6 @@
-# create-play.sh
+# game-play.sh
 
-curl "https://tic-tac-toe-api-development.herokuapp.com/game/${ID}" \
+curl "https://tic-tac-toe-api-development.herokuapp.com/games/${ID}" \
   --include \
   --request PATCH \
   --header "Authorization: Bearer ${TOKEN}" \
