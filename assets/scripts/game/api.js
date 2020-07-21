@@ -43,7 +43,7 @@ const indexOne = function () {
     data: {
       game: {
         cell: {
-          index: 1,
+          index: 0,
           value: 'x'
         },
         over: false
@@ -62,7 +62,7 @@ const indexTwo = function () {
     data: {
       game: {
         cell: {
-          index: 2,
+          index: 0,
           value: 'x'
         },
         over: false
@@ -81,7 +81,7 @@ const indexThree = function () {
     data: {
       game: {
         cell: {
-          index: 3,
+          index: 0,
           value: 'x'
         },
         over: false
@@ -100,7 +100,7 @@ const indexFour = function () {
     data: {
       game: {
         cell: {
-          index: 4,
+          index: 0,
           value: 'x'
         },
         over: false
@@ -119,7 +119,7 @@ const indexFive = function () {
     data: {
       game: {
         cell: {
-          index: 5,
+          index: 0,
           value: 'x'
         },
         over: false
@@ -138,7 +138,7 @@ const indexSix = function () {
     data: {
       game: {
         cell: {
-          index: 6,
+          index: 0,
           value: 'x'
         },
         over: false
@@ -157,7 +157,7 @@ const indexSeven = function () {
     data: {
       game: {
         cell: {
-          index: 7,
+          index: 0,
           value: 'x'
         },
         over: false
@@ -176,7 +176,7 @@ const indexEight = function () {
     data: {
       game: {
         cell: {
-          index: 8,
+          index: 0,
           value: 'x'
         },
         over: false
