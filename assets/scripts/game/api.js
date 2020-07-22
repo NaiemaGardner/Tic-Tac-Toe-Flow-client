@@ -14,7 +14,7 @@ const newGame = function () {
   })
 }
 
-const indexZero = function () {
+const clickBoard = function () {
   return $.ajax({
     headers: {
       Authorization: 'Bearer ' + store.user.token
@@ -24,162 +24,10 @@ const indexZero = function () {
     data: {
       game: {
         cell: {
-          index: 0,
-          value: 'x'
+          index: store.index,
+          value: store.player
         },
-        over: false
-      }
-    }
-  })
-}
-
-const indexOne = function () {
-  return $.ajax({
-    headers: {
-      Authorization: 'Bearer ' + store.user.token
-    },
-    url: config.apiUrl + '/games/' + store.game._id,
-    method: 'PATCH',
-    data: {
-      game: {
-        cell: {
-          index: 0,
-          value: 'x'
-        },
-        over: false
-      }
-    }
-  })
-}
-
-const indexTwo = function () {
-  return $.ajax({
-    headers: {
-      Authorization: 'Bearer ' + store.user.token
-    },
-    url: config.apiUrl + '/games/' + store.game._id,
-    method: 'PATCH',
-    data: {
-      game: {
-        cell: {
-          index: 0,
-          value: 'x'
-        },
-        over: false
-      }
-    }
-  })
-}
-
-const indexThree = function () {
-  return $.ajax({
-    headers: {
-      Authorization: 'Bearer ' + store.user.token
-    },
-    url: config.apiUrl + '/games/' + store.game._id,
-    method: 'PATCH',
-    data: {
-      game: {
-        cell: {
-          index: 0,
-          value: 'x'
-        },
-        over: false
-      }
-    }
-  })
-}
-
-const indexFour = function () {
-  return $.ajax({
-    headers: {
-      Authorization: 'Bearer ' + store.user.token
-    },
-    url: config.apiUrl + '/games/' + store.game._id,
-    method: 'PATCH',
-    data: {
-      game: {
-        cell: {
-          index: 0,
-          value: 'x'
-        },
-        over: false
-      }
-    }
-  })
-}
-
-const indexFive = function () {
-  return $.ajax({
-    headers: {
-      Authorization: 'Bearer ' + store.user.token
-    },
-    url: config.apiUrl + '/games/' + store.game._id,
-    method: 'PATCH',
-    data: {
-      game: {
-        cell: {
-          index: 0,
-          value: 'x'
-        },
-        over: false
-      }
-    }
-  })
-}
-
-const indexSix = function () {
-  return $.ajax({
-    headers: {
-      Authorization: 'Bearer ' + store.user.token
-    },
-    url: config.apiUrl + '/games/' + store.game._id,
-    method: 'PATCH',
-    data: {
-      game: {
-        cell: {
-          index: 0,
-          value: 'x'
-        },
-        over: false
-      }
-    }
-  })
-}
-
-const indexSeven = function () {
-  return $.ajax({
-    headers: {
-      Authorization: 'Bearer ' + store.user.token
-    },
-    url: config.apiUrl + '/games/' + store.game._id,
-    method: 'PATCH',
-    data: {
-      game: {
-        cell: {
-          index: 0,
-          value: 'x'
-        },
-        over: false
-      }
-    }
-  })
-}
-
-const indexEight = function () {
-  return $.ajax({
-    headers: {
-      Authorization: 'Bearer ' + store.user.token
-    },
-    url: config.apiUrl + '/games/' + store.game._id,
-    method: 'PATCH',
-    data: {
-      game: {
-        cell: {
-          index: 0,
-          value: 'x'
-        },
-        over: false
+        over: store.over
       }
     }
   })
@@ -187,13 +35,5 @@ const indexEight = function () {
 
 module.exports = {
   newGame,
-  indexZero,
-  indexOne,
-  indexTwo,
-  indexThree,
-  indexFour,
-  indexFive,
-  indexSix,
-  indexSeven,
-  indexEight
+  clickBoard
 }
