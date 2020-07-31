@@ -1,10 +1,13 @@
 'use strict'
 
 const store = require('../store')
-store.player = 'X'
-store.winner = 'X'
-store.over = false
-// store.index.win = [
+const gameMove = require('./event')
+
+// store.over = false
+
+// store.winner = 'X'
+// store.game.over = false
+// store.game.index.win = [
 // [0, 1, 2],
 // [3, 4, 5],
 // [6, 7, 8],
@@ -15,25 +18,40 @@ store.over = false
 // [2, 4, 6]
 // ]
 
+// Screen toggling
+const enterChangePasswordView = function () {
+  $('#authenticated-main').hide()
+  $('#authenticated-password').show()
+}
+const enterStatsView = function () {
+  $('#authenticated-main').hide()
+  $('#authenticated-stats').show()
+}
+const exitStatsView = function () {
+  $('#authenticated-stats').hide()
+  $('#authenticated-main').show()
+}
+
+// Game events
 const newGameSuccess = function (response) {
-  $('#result').text('Place X on the board.')
+  $('#game-guide').text('Place X on the board.')
   store.game = response.game
 }
 const newGameFailure = function () {
-  $('#result').text('The game failed to load.')
+  $('#main-attempt').text('The game failed to load.')
 }
 
 const clickBoardSuccess = function (response) {
   store.game = response.game
-  $('#board').text(store.player)
-  if (store.player === 'X') {
-    store.player = 'O'
+  if (store.game.player === 'X') {
+    store.game.player = 'O'
   } else {
-    store.player = 'X'
+    store.game.player = 'X'
   }
+  $('.square').text(store.game.player)
 }
 const clickBoardFailure = function () {
-  $('#board').text('An unexpected error has occured.')
+  $('#game-guide').text('An unexpected error has occurred.')
 }
 
 // const gameOverSuccess = function (response) {
@@ -54,10 +72,18 @@ const clickBoardFailure = function () {
 // }
 
 module.exports = {
+  enterChangePasswordView,
+  enterStatsView,
+  exitStatsView,
   newGameSuccess,
   newGameFailure,
   clickBoardSuccess,
   clickBoardFailure
-//  gameOverSuccess,
-//  gameOverFailure
+  // gameOverSuccess,
+  // gameOverFailure
+  // getStatsSuccess,
+  // getStatsFailure,
+  // statsReturn,
+  // pressPassword,
+  // passwordReturn
 }

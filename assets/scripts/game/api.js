@@ -3,7 +3,7 @@
 const config = require('../config')
 const store = require('../store')
 
-const newGame = function () {
+const createGame = function () {
   return $.ajax({
     headers: {
       Authorization: 'Bearer ' + store.user.token
@@ -14,7 +14,7 @@ const newGame = function () {
   })
 }
 
-const clickBoard = function () {
+const updateGame = function () {
   return $.ajax({
     headers: {
       Authorization: 'Bearer ' + store.user.token
@@ -24,16 +24,16 @@ const clickBoard = function () {
     data: {
       game: {
         cell: {
-          index: store.index,
-          value: store.player
+          index: store.game.index,
+          value: store.game.player
         },
-        over: store.over
+        over: store.game.over
       }
     }
   })
 }
 
 module.exports = {
-  newGame,
-  clickBoard
+  createGame,
+  updateGame
 }

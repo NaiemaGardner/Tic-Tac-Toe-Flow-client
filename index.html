@@ -1,86 +1,101 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title>Tic Tac Toe Flow</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
-    <body>
-      <header>
-        <h1>Tic Tac Toe Flow</h1>
-      </header>
+  <head>
+    <title>Tic Tac Toe Flow</title>
 
-      <div id="unauthenticated">
-        <header>
-          <p>Game Description</p>
-        </header>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <p id="attempt"></p>
-        <form id="sign-up">
-          <p>New User?</p>
-          <input type="text" name="credentials[name]" placeholder="Enter Username">
-          <input type="email" name="credentials[email]" placeholder="Enter Email">
-          <input type="password" name="credentials[password]" placeholder="Set Password">
-          <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password" >
-          <button type="submit">Sign Up!</button>
-        </form>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
-        <form id="sign-in">
-          <p>Returning User?</p>
-          <input type="email" name="credentials[email]" placeholder="Enter Email">
-          <input type="password" name="credentials[password]" placeholder="Enter Password" >
-          <button type="submit">Sign In</button>
-        </form>
-      </div>
+    <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
 
-      <div id="authenticated">
-        <h2>Welcome User!</h2>
+    <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>Tic Tac Toe Flow</h1>
+    </header>
 
-        <p id="auth-attempt"></p>
-        <form id="change-password">
-          <input type="text" name="passwords[old]" placeholder="Old Password">
-          <input type="text" name="passwords[new]" placeholder="New Password">
-          <button type="submit">Change Password</button>
-        </form>
+    <div id="unauthenticated">
+      <section>
+        <p>Game Description</p>
+      </section>
 
-        <table id="board">
-          <tr>
-            <td class="zero"></td>
-            <td class="one"></td>
-            <td class="two"></td>
-          </tr>
-          <tr>
-            <td class="three"></td>
-            <td class="four"></td>
-            <td class="five"></td>
-          </tr>
-          <tr>
-            <td class="six"></td>
-            <td class="seven"></td>
-            <td class="eight"></td>
-          </tr>
-        </table>
+      <p id="auth-attempt"></p>
 
-        <div id="result">
-          <p>WIN/LOSE/DRAW DISPLAY</p>
-        </div>
+      <form id="sign-up">
+        <p>New User?</p>
+        <!-- <input type="text" name="credentials[name]" placeholder="Enter Username"> -->
+        <input type="email" name="credentials[email]" placeholder="Enter Email">
+        <input type="password" name="credentials[password]" placeholder="Set Password">
+        <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+        <button type="submit">Sign Up!</button>
+      </form>
 
-        <form id="new-game">
-          <button id="submit">New Game</button>
-        </form>
+      <form id="sign-in">
+        <p>Returning User?</p>
+        <input type="email" name="credentials[email]" placeholder="Enter Email">
+        <input type="password" name="credentials[password]" placeholder="Enter Password">
+        <button type="submit">Let's Play!</button>
+      </form>
 
-        <form id="game-stats">
-          <button type="button">Game Stats</button>
-        </form>
 
-        <form id="sign-out">
-          <button type="submit">Sign Out</button>
-        </form>
+    </div>
 
-        <p>Game Rules</p>
-      </div>
+    <div id="authenticated-main">
+      <h2>Welcome User!</h2>
 
-    </body>
+      <p id="game-guide"></p>
+
+      <table id="board">
+        <tr>
+          <td class="square" id="0"></td>
+          <td class="square" id="1"></td>
+          <td class="square" id="2"></td>
+        </tr>
+        <tr>
+          <td class="square" id="3"></td>
+          <td class="square" id="4"></td>
+          <td class="square" id="5"></td>
+        </tr>
+        <tr>
+          <td class="square" id="6"></td>
+          <td class="square" id="7"></td>
+          <td class="square" id="8"></td>
+        </tr>
+    </table>
+
+    <p id="main-attempt"></p>
+
+    <nav id="buttons">
+      <button type="button" id="new-game">New Game</button>
+
+      <!-- <dialog id="start-over">
+        <p id="new-game-confirm">Starting a new game will forfeit the current game. Are you sure you want to start a new game now?</p>
+        <button type="button" id="new-game-yes">Yes!</button>
+        <button type="button" id="new-game-no">No Thanks!</button>
+      </dialog> -->
+
+      <button type="button" id="game-stats">Game Stats</button>
+
+      <button type="button" id="password">Change Password</button>
+
+      <button type="button" id="sign-out">Sign Out</button>
+    </nav>
+  </div>
+
+  <div id="authenticated-stats">
+    <p id="stats"></p>
+
+    <button type="button" id="stats-return">Take Me Back!</button>
+  </div>
+
+  <div id="authenticated-password">
+    <form id="change-password">
+      <input type="text" name="passwords[old]" placeholder="Old Password">
+      <input type="text" name="passwords[new]" placeholder="New Password">
+      <button type="submit">Change Now!</button>
+    </form>
+  </div>
+ </body>
 </html>

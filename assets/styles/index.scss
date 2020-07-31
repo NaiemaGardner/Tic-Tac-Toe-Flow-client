@@ -11,38 +11,9 @@ table {
   margin: 5px auto;
 }
 
-.zero {
+.square {
   border-bottom: 2px solid $table-color;
+  border-left: 2px solid $table-color;
   border-right: 2px solid $table-color;
-}
-
-.one {
-  border-bottom: 2px solid $table-color;
-  border-right: 2px solid $table-color;
-}
-
-.two {
-  border-bottom: 2px solid $table-color;
-}
-
-.three {
-  border-bottom: 2px solid $table-color;
-  border-right: 2px solid $table-color;
-}
-
-.four {
-  border-bottom: 2px solid $table-color;
-  border-right: 2px solid $table-color;
-}
-
-.five {
-  border-bottom: 2px solid $table-color;
-}
-
-.six {
-  border-right: 2px solid $table-color;
-}
-
-.seven {
-  border-right: 2px solid $table-color;
+  border-top: 2px solid $table-color;
 }
