@@ -1,19 +1,28 @@
 @import '~bootstrap/scss/bootstrap';
 
-$table-color: #000;
+$background-color: #34495e;
+$text-color: #fff;
+$border-color: #2c3e50;
 
-td {
-  height: 100px;
-  width: 100px;
-}
-
-table {
-  margin: 5px auto;
+.board {
+  background-color: $background-color;
+  border: 6px solid $border-color;
+  border-radius: 10px;
+  color: $text-color;
+  display: grid;
+  grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+  height: 500px;
+  margin: 0 auto;
+  width: 500px;
 }
 
 .square {
-  border-bottom: 2px solid $table-color;
-  border-left: 2px solid $table-color;
-  border-right: 2px solid $table-color;
-  border-top: 2px solid $table-color;
+  align-items: center;
+  border: 6px solid $border-color;
+  border-radius: 2px;
+  display: flex;
+  font-family: Helvetica;
+  font-size: 4em;
+  font-weight: bold;
+  justify-content: center;
 }

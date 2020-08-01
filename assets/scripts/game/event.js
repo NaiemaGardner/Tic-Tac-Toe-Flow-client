@@ -31,13 +31,8 @@ const onNewGame = function (event) {
 
 const onClickBoard = function (event) {
   event.preventDefault()
-  const move = event.target
-  const gameMove = $(move)
+  const gameMove = $(event.target)
   store.game.index = gameMove.index()
-  // const move = event.target
-  // const gameMove = $(move).data('index')
-  // store.game.index = gameMove
-  // store.game.index = $(gameMove).html(store.game.player)
   api.updateGame(store.game.index)
     .then(ui.clickBoardSuccess)
     .catch(ui.clickBoardFailure)
