@@ -31,11 +31,16 @@ const onNewGame = function (event) {
 
 const onClickBoard = function (event) {
   event.preventDefault()
+  // storing index(#) of element
   const gameMove = $(event.target)
   store.game.index = gameMove.index()
-  api.updateGame(store.game.index)
-    .then(ui.clickBoardSuccess)
-    .catch(ui.clickBoardFailure)
+  if (store.game.cells[store.game.index] === '') {
+    api.updateGame()
+      .then(ui.clickBoardSuccess)
+      .catch(ui.clickBoardFailure)
+  } else {
+    $('#game-guide').text('Invalid move.')
+  } // get element from page > insert string into element on page
 }
 
 // if (store.over === true) {

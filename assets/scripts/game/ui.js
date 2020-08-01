@@ -1,7 +1,6 @@
 'use strict'
 
 const store = require('../store')
-const gameMove = require('./event')
 
 // store.over = false
 
@@ -36,19 +35,31 @@ const exitStatsView = function () {
 const newGameSuccess = function (response) {
   $('#game-guide').text('Place X on the board.')
   store.game = response.game
+  store.game.player = 'X'
 }
 const newGameFailure = function () {
   $('#main-attempt').text('The game failed to load.')
 }
 
 const clickBoardSuccess = function (response) {
+  // setting board text
+  const gameMove = $('.square').eq(store.game.index)
+  gameMove.text(store.game.player)
+  console.log('----click board success----')
+  console.log(store.game.player)
+  const currentPlayer = store.game.player
+  // setting the game object
   store.game = response.game
-  if (store.game.player === 'X') {
+  console.log('----response----')
+  console.log(response)
+  // toggling player
+  if (currentPlayer === 'X') {
     store.game.player = 'O'
   } else {
     store.game.player = 'X'
   }
-  $('.square').text(store.game.player)
+  console.log('----equation----')
+  console.log(store.game.player)
 }
 const clickBoardFailure = function () {
   $('#game-guide').text('An unexpected error has occurred.')

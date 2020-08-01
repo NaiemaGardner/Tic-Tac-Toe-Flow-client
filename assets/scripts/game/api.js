@@ -15,6 +15,16 @@ const createGame = function () {
 }
 
 const updateGame = function () {
+  console.log('----update game----')
+  console.log({
+    game: {
+      cell: {
+        index: store.game.index,
+        value: store.game.player
+      },
+      over: store.game.over
+    }
+  })
   return $.ajax({
     headers: {
       Authorization: 'Bearer ' + store.user.token
