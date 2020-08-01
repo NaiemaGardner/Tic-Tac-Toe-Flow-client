@@ -1,21 +1,7 @@
 'use strict'
 
 const store = require('../store')
-
-// store.over = false
-
-// store.winner = 'X'
-// store.game.over = false
-// store.game.index.win = [
-// [0, 1, 2],
-// [3, 4, 5],
-// [6, 7, 8],
-// [0, 3, 6],
-// [1, 4, 7],
-// [2, 5, 8],
-// [0, 4, 8],
-// [2, 4, 6]
-// ]
+const win = require('./checkWinner')
 
 // Screen toggling
 const enterChangePasswordView = function () {
@@ -33,6 +19,8 @@ const exitStatsView = function () {
 
 // Game events
 const newGameSuccess = function (response) {
+  // $('.board')[0].reset()
+  $('.board').show()
   $('#game-guide').text('Place X on the board.')
   store.game = response.game
   store.game.player = 'X'
@@ -45,42 +33,22 @@ const clickBoardSuccess = function (response) {
   // setting board text
   const gameMove = $('.square').eq(store.game.index)
   gameMove.text(store.game.player)
-  console.log('----click board success----')
-  console.log(store.game.player)
   const currentPlayer = store.game.player
   // setting the game object
   store.game = response.game
-  console.log('----response----')
-  console.log(response)
+  // winner logic
+  win.checkWinnerX()
+  win.checkWinnerO()
   // toggling player
   if (currentPlayer === 'X') {
     store.game.player = 'O'
   } else {
     store.game.player = 'X'
   }
-  console.log('----equation----')
-  console.log(store.game.player)
 }
 const clickBoardFailure = function () {
   $('#game-guide').text('An unexpected error has occurred.')
 }
-
-// const gameOverSuccess = function (response) {
-//  store.game = response.game
-//  if (store.index.win === 'X') {
-//    store.winner = 'X'
-//    $('#result').text('Player ' + store.winner + ' has won the game!')
-//  } else if (store.index.win === 'O') {
-//    store.winner = 'O'
-//    $('#result').text('Player ' + store.winner + ' has won the game!')
-//  } else {
-//    $('#result').text('Draw!')
-//  }
-// }
-// const gameOverFailure = function (response) {
-//  store.game = response.game
-//  $('#result').text('An unexpected error has occured.')
-// }
 
 module.exports = {
   enterChangePasswordView,
@@ -90,11 +58,4 @@ module.exports = {
   newGameFailure,
   clickBoardSuccess,
   clickBoardFailure
-  // gameOverSuccess,
-  // gameOverFailure
-  // getStatsSuccess,
-  // getStatsFailure,
-  // statsReturn,
-  // pressPassword,
-  // passwordReturn
 }

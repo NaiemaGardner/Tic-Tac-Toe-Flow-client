@@ -19,7 +19,7 @@ const exitGameStats = function (event) {
   ui.exitStatsView()
 }
 
-// Game events
+// Start game events
 const onNewGame = function (event) {
   event.preventDefault()
   const game = event.target
@@ -29,35 +29,27 @@ const onNewGame = function (event) {
     .catch(ui.newGameFailure)
 }
 
+// Play game events
 const onClickBoard = function (event) {
   event.preventDefault()
-  // storing index(#) of element
+  // storing index(#) of element as a jquery object
   const gameMove = $(event.target)
   store.game.index = gameMove.index()
-  if (store.game.cells[store.game.index] === '') {
+
+  // continue game play and place piece on board
+  if (store.game.over !== true && store.game.cells[store.game.index] === '') {
     api.updateGame()
       .then(ui.clickBoardSuccess)
       .catch(ui.clickBoardFailure)
-  } else {
-    $('#game-guide').text('Invalid move.')
-  } // get element from page > insert string into element on page
+  // continue game play and prevent placing piece on board
+  } else if (store.game.over !== true && store.game.cells[store.game.index] !== '') {
+    // get element from page > insert string into element on page
+    $('#game-guide').text('Invalid move. Select an empty space.')
+    // draw
+  } else if (store.game.cells !== '') {
+    $('#game-guide').text('It is a draw! Start a new game.')
+  }
 }
-
-// if (store.over === true) {
-//   event.preventDefault()
-//   const game = event.target
-//   const gameData = getFormFields(game)
-//   api.clickBoard(gameData)
-//     .then(ui.gameOverSuccess)
-//     .catch(ui.gameOverFailure)
-// } else if (store.over === false && store.index === '') {
-//   event.preventDefault()
-//   const game = event.target
-//   const gameData = getFormFields(game)
-//   api.clickBoard(gameData)
-//     .then(ui.clickBoardSuccess)
-//     .catch(ui.clickBoardFailure)
-// }
 
 module.exports = {
   enterChangePassword,
