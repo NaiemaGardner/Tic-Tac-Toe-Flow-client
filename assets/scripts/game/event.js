@@ -45,9 +45,6 @@ const onClickBoard = function (event) {
   } else if (store.game.over !== true && store.game.cells[store.game.index] !== '') {
     // get element from page > insert string into element on page
     $('#game-guide').text('Invalid move. Select an empty space.')
-    // draw
-  } else if (store.game.cells !== '') {
-    $('#game-guide').text('It is a draw! Start a new game.')
   }
 }
 

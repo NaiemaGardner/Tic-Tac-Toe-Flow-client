@@ -1,7 +1,7 @@
 'use strict'
 
 const store = require('../store')
-const win = require('./checkWinner')
+const win = require('./winner')
 
 // Screen toggling
 const enterChangePasswordView = function () {
@@ -19,7 +19,6 @@ const exitStatsView = function () {
 
 // Game events
 const newGameSuccess = function (response) {
-  // $('.board')[0].reset()
   $('.board').show()
   $('#game-guide').text('Place X on the board.')
   store.game = response.game
@@ -39,6 +38,7 @@ const clickBoardSuccess = function (response) {
   // winner logic
   win.checkWinnerX()
   win.checkWinnerO()
+  win.checkDraw()
   // toggling player
   if (currentPlayer === 'X') {
     store.game.player = 'O'
