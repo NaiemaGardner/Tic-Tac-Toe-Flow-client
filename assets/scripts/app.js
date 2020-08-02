@@ -9,6 +9,7 @@ $(() => {
   $('#authenticated-main').hide()
   $('#authenticated-stats').hide()
   $('#authenticated-password').hide()
+  $('.board').hide()
   // Authentication
   $('#sign-up').on('submit', authEvents.onSignUp)
   $('#sign-in').on('submit', authEvents.onSignIn)

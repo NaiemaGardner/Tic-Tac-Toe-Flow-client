@@ -1,4 +1,4 @@
-game-create.sh
+game-post.sh
 
 curl "https://tic-tac-toe-api-development.herokuapp.com/games" \
   --include \

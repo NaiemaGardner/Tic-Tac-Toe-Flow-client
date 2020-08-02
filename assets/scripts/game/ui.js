@@ -8,10 +8,6 @@ const enterChangePasswordView = function () {
   $('#authenticated-main').hide()
   $('#authenticated-password').show()
 }
-const enterStatsView = function () {
-  $('#authenticated-main').hide()
-  $('#authenticated-stats').show()
-}
 const exitStatsView = function () {
   $('#authenticated-stats').hide()
   $('#authenticated-main').show()
@@ -50,12 +46,26 @@ const clickBoardFailure = function () {
   $('#game-guide').text('An unexpected error has occurred.')
 }
 
+const gameStatsSuccess = function (response) {
+  $('#authenticated-main').hide()
+  $('#authenticated-stats').show()
+  if (response.games.length === 0) {
+    $('#stats').text('Games played: 0')
+  } else {
+    $('#stats').html('Games played: ' + response.games.length)
+  }
+}
+const gameStatsFailure = function () {
+  $('#stats').text('An unexpected error has occurred.')
+}
+
 module.exports = {
   enterChangePasswordView,
-  enterStatsView,
   exitStatsView,
   newGameSuccess,
   newGameFailure,
   clickBoardSuccess,
-  clickBoardFailure
+  clickBoardFailure,
+  gameStatsSuccess,
+  gameStatsFailure
 }

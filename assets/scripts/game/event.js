@@ -10,10 +10,14 @@ const enterChangePassword = function (event) {
   event.preventDefault()
   ui.enterChangePasswordView()
 }
+// View game stats
 const enterGameStats = function (event) {
   event.preventDefault()
-  ui.enterStatsView()
+  api.showGame()
+    .then(ui.gameStatsSuccess)
+    .catch(ui.gameStatsFailure)
 }
+
 const exitGameStats = function (event) {
   event.preventDefault()
   ui.exitStatsView()
