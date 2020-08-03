@@ -1,17 +1,19 @@
 # Tic-Tac-Toe Flow
+------------------------------
 
 
 ## Technologies
 ------------------------------
-⋅⋅* JavaScript
-⋅⋅* HTML
-⋅⋅* Bootstrap
+- JavaScript
+- HTML
+- Bootstrap
 
 
 ## Planning
 ------------------------------
 ### Development Process
-[I'm an inline-style link with title](https://docs.google.com/document/d/12n01eAFY9EPrAL0Flh9hDlbNzlk1hWhrJ8MO6sOsLeY/edit?usp=sharing "Game Requirements")
+[Game Requirements](https://docs.google.com/document/d/12n01eAFY9EPrAL0Flh9hDlbNzlk1hWhrJ8MO6sOsLeY/edit?usp=sharing "Game Requirements")
+
 The game requirements were used to plan the flow of the application. I created the initial wireframe and used it to formulate user stories. The requirements and user stories allowed me to detail execution steps for the application and with these I was able to categorize the application's functionality steps into JavaScript variables, functions, conditionals and API calls. Since syling beyond a game board was not a requirement it was completed last. I considered what imagery the game title could represent.
 
 
@@ -39,5 +41,5 @@ In future iterations I would like to create an API for the game to improve the u
 
 ### Wireframes
 ------------------------------
-![alt text](https://imgur.com/9nqBgBm "WireframeV1")
-![alt text](https://imgur.com/j1WcjZB "WireframeV2")
+[Wireframe V1](https://imgur.com/9nqBgBm "WireframeV1")
+[Wireframe V2](https://imgur.com/j1WcjZB "WireframeV2")
