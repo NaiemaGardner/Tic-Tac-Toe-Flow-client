@@ -18,20 +18,19 @@
 
     <div id="unauthenticated">
       <section>
-        <p>Game Description</p>
+        <p>In this single-player tic-tac-toe game you can play against yourself or a nearby friend alternating between Players X and O. The goal is line up three player characters in a row, column or diagonal before your opponent does. Sign-in below to play a game, or several, and test your wits!</p>
       </section>
 
       <p id="auth-attempt"></p>
 
       <form id="sign-up">
         <p>New User?</p>
-        <!-- <input type="text" name="credentials[name]" placeholder="Enter Username"> -->
         <input type="email" name="credentials[email]" placeholder="Enter Email">
         <input type="password" name="credentials[password]" placeholder="Set Password">
         <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
         <button type="submit">Sign Up!</button>
       </form>
-
+      <br>
       <form id="sign-in">
         <p>Returning User?</p>
         <input type="email" name="credentials[email]" placeholder="Enter Email">
@@ -63,12 +62,6 @@
 
     <nav id="buttons">
       <button type="button" id="new-game">New Game</button>
-
-      <!-- <dialog id="start-over">
-        <p id="new-game-confirm">Starting a new game will forfeit the current game. Are you sure you want to start a new game now?</p>
-        <button type="button" id="new-game-yes">Yes!</button>
-        <button type="button" id="new-game-no">No Thanks!</button>
-      </dialog> -->
 
       <button type="button" id="game-stats">Game Stats</button>
 

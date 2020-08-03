@@ -10,26 +10,10 @@ const signUpFailure = function () {
   $('#auth-attempt').text('Sign up attempt failed. Please try again.')
 }
 
-// const signUpSuccess = function (response) {
-//   $('#unauthenticated').hide()
-//   $('#authenticated-main').show()
-//   // console.log(store)
-//   // store.user = response.user
-//   // console.log('store: ', store)
-//   // console.log('token: ', store.user.token)
-//   $('#sign-up')[0].reset()
-// }
-// const signUpFailure = function () {
-//   $('#auth-attempt').text('Sign up attempt failed. Please try again.')
-// }
-
 const signInSuccess = function (response) {
   $('#unauthenticated').hide()
   $('#authenticated-main').show()
-  console.log(store)
   store.user = response.user
-  console.log('store: ', store)
-  console.log('token: ', store.user.token)
   $('#sign-in')[0].reset()
   $('#main-attempt').text('Ready, set, play!')
 }
@@ -51,6 +35,7 @@ const changePasswordFailure = function () {
 
 const signOutSuccess = function () {
   $('#authenticated-main').hide()
+  $('#game-guide').hide()
   $('#unauthenticated').show()
   $('#auth-attempt').text('User signed out. See you soon!')
   store.user = null

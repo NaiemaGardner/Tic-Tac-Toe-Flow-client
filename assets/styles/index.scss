@@ -1,8 +1,30 @@
 @import '~bootstrap/scss/bootstrap';
 
-$background-color: #34495e;
-$text-color: #fff;
-$border-color: #2c3e50;
+$background-color: #1a1a1a;
+$border-color: #c2ae92;
+$page-background: #000;
+$text-color: #fcfadf;
+
+body {
+  background-color: $page-background;
+}
+
+H1 {
+  color: $text-color;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 55px;
+}
+
+H2 {
+  color: $text-color;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+p {
+  color: $text-color;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 20px;
+}
 
 .board {
   background-color: $background-color;
@@ -11,14 +33,14 @@ $border-color: #2c3e50;
   color: $text-color;
   display: grid;
   grid-template: repeat(3, 1fr) / repeat(3, 1fr);
-  height: 500px;
+  height: 450px;
   margin: 0 auto;
-  width: 500px;
+  width: 450px;
 }
 
 .square {
   align-items: center;
-  border: 6px solid $border-color;
+  border: 3px solid $border-color;
   border-radius: 2px;
   display: flex;
   font-family: Helvetica;

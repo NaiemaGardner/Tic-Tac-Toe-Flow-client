@@ -1,129 +1,43 @@
-[![General Assembly Logo](https://camo.githubusercontent.com/1a91b05b8f4d44b5bbfb83abac2b0996d8e26c92/687474703a2f2f692e696d6775722e636f6d2f6b6538555354712e706e67)](https://generalassemb.ly/education/web-development-immersive)
-
-# browser-template
-
-A template for starting front-end projects. Webpack for `require` system, build
-pipeline, and development server. Boostrap and Handlebars.js included. No
-front-end frameworks included.
-
-## Installation
-
-1. [Download](../../archive/master.zip) this template.
-    - **Do Not Fork And Clone**
-    - Click the "Clone or Download" button and select "Download Zip".
-1. Move to the `sei/projects` directory, then unzip the template directory with
-    `unzip /Users/<user-name>/Downloads/browser-template-master.zip`.
-1. Rename the template directory from `browser-template-master` to
-    `<project-name>-client`.
-1. Empty [`README.md`](README.md) and fill with your own content.
-1. Replace all instances of `ga-wdi-boston.browser-template` with the name of
-    your project.
-    - You can search for all instances of text in Atom by pressing
-    `commant + shift + f` on Mac or `ctrl + shift + f` on WSL.
-1. Move into the new project and `git init`.
-1. Add all of the files in your project with the command `git add --all`.
-      - **Note: This is the only time you should run this command!**
-1. Commit all of your files with the command `git commit`.
-      - Your commit title should read `Initial commit`.
-1. Install dependencies with `npm install`.
-1. Create a new repository on [github.com](https://github.com),
-    _not GitHub Enterprise_.
-1. Name the new repository with the same name used on Step 3.
-1. Follow the instructions on your new repository's setup page. For details on
-   how to push to Github, refer to the section on Github entitled "…or push an existing
-   repository from the command line." Further documentation can be found [here](https://help.github.com/articles/adding-an-existing-project-to-github-using-the-command-line/).
-
-## Structure
-
-### Scripts
-
-Developers should store JavaScript files in [`assets/scripts`](assets/scripts).
-The "manifest" or entry-point is
-[`assets/scripts/app.js`](assets/scripts/app.js). In general, only
-application initialization goes in this file. It's normal for developers to
-start putting all code in this file, but encourage them to break out different
-responsibilities and use the `require` syntax put references where they're
-needed.
-
-### Config
-
-Developers should set `apiUrls.production` and `apiUrls.development` in
-[`assets/scripts/config.js`](assets/scripts/config.js).  With
-`apiUrls` set, developers may rely on `apiUrl` as the base for API
-URLs.
-
-### Styles
-
-Developers should store styles in [`assets/styles`](assets/styles) and load them
-from [`assets/styles/index.scss`](assets/styles/index.scss). Bootstrap version 3 is
-included in this template.
-
-### Forms and Using `getFormFields`
-
-Developers should use [getFormFields](get-form-fields.md) to retrieve form data
-to send to an API.
-
-### Deployment
-
-To deploy a browser-template based SPA, run `grunt deploy`.
-
-## Adding Images
-
-To add images to your project, you must store them in the `public` directory.
-To use the image in HTML or CSS, write the path to the image like this:
-
-```html
-<img src="public/cat.jpg">
-```
-or
-```css
-#my-cool-div {
-  background-image: url('public/cat.jpg')
-}
-```
-
-Note that there's no `./` or `/` in front of `public/filename.jpg`.
-
-## Adding Fonts
-
-To add custom fonts to your app, you can either use a CDN like Google Fonts, or
-you can download the fonts and save them in the `public` directory. If you use
-the former method, follow the directions on the website providing the fonts.
-
-For local fonts, put the files in `public`, and then import and use them in a
-`.scss` file like this:
-
-```scss
-@font-face {
-  font-family: 'Nature Beauty';
-  src: url('public/Nature-Beauty.ttf') format('truetype');
-}
-
-.element-with-custom-font {
-  font-family: 'Nature Beauty';
-}
-```
-
-## Tasks
-
-Developers should run these often!
-
-- `grunt nag` or just `grunt`: runs code quality analysis tools on your code
-    and complains
-- `grunt make-standard`: reformats all your code in the JavaScript Standard Style
-- `grunt <server|serve|s>`: generates bundles, watches, and livereloads
-- `grunt build`: place bundled styles and scripts where `index.html` can find
-    them
-- `grunt deploy`: builds and deploys master branch
+# Tic-Tac-Toe Flow
 
 
-## Additional Resources
+## Technologies
+------------------------------
+⋅⋅* JavaScript
+⋅⋅* HTML
+⋅⋅* Bootstrap
 
-- [Modern Javascript Explained for Dinosaurs](https://medium.com/@peterxjang/modern-javascript-explained-for-dinosaurs-f695e9747b70)
-- [Making Sense of Front End Build Tools](https://medium.freecodecamp.org/making-sense-of-front-end-build-tools-3a1b3a87043b)
 
-## [License](LICENSE)
+## Planning
+------------------------------
+### Development Process
+[I'm an inline-style link with title](https://docs.google.com/document/d/12n01eAFY9EPrAL0Flh9hDlbNzlk1hWhrJ8MO6sOsLeY/edit?usp=sharing "Game Requirements")
+The game requirements were used to plan the flow of the application. I created the initial wireframe and used it to formulate user stories. The requirements and user stories allowed me to detail execution steps for the application and with these I was able to categorize the application's functionality steps into JavaScript variables, functions, conditionals and API calls. Since syling beyond a game board was not a requirement it was completed last. I considered what imagery the game title could represent.
 
-1. All content is licensed under a CC­BY­NC­SA 4.0 license.
-1. All software code is licensed under GNU GPLv3. For commercial use or
-    alternative licensing, please contact legal@ga.co.
+
+### Problem Solving Strategies
+Since I highlighted the application's functionality steps into different categories, problem solving was a step by step process that used this pre-planning as a base. I handwrote potential code for problem solving and adjusted as I built the application. After receiving intial feedback I created a new wireframe to guide the UI functionality and continued to problem solve using game requirements and formulated planning sheets. Application was successfully built with no user-facing bugs or inactive controls.
+
+
+### Unsolved Problems
+In future iterations I would like to create an API for the game to improve the user's experience, allowing the user to personalize their game play experience. I would also like to add the option to play against a computer with varying levels of difficulty. In future iterations I would like to update the styling of the game to include animations.
+
+
+### User Stories
+------------------------------
+1. As a user I want to know that I have navigated to the correct URL so that I may play a game of tic-tac-toe. (Tic Tac Toe Title)
+2. As a user I want to know how to play tic-tac-toe so that I may play the game. (Game Description)
+3. As a user I want to be able to sign-up for an account or sign-in to my pre-existing account so that I may play a game. (Sign-Up/Sign-In)
+4. As a user I want to know that I have signed in succesfully so that I may begin playing. (Welcome User!)
+5. As a user I want to start a game of tic-tac-toe so that I can play. (New Game Button)
+6. As a user I want to know which player's turn it is so that I can play a turn. (Game Guide)
+7. As a user I want to know if I have won, lost, or drawn at the end of each game so that I can celebrate, cry or remain indifferent. (Win/Lose/Draw Display)
+8. As a user I want to change my password so that I can protect my account. (Change Password)
+9. As a user I want to know how many games I have played so that I can track my record. (View Stats Button)
+10. As a user I want to sign out once I have finished playing so that I can protect my account. (Sign Out Button)
+
+
+### Wireframes
+------------------------------
+![alt text](https://imgur.com/9nqBgBm "WireframeV1")
+![alt text](https://imgur.com/j1WcjZB "WireframeV2")

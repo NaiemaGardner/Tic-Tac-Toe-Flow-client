@@ -17,6 +17,7 @@ const exitStatsView = function () {
 const newGameSuccess = function (response) {
   $('.board').show()
   $('#game-guide').text('Place X on the board.')
+  $('#game-guide').show()
   store.game = response.game
   store.game.player = 'X'
 }
@@ -40,6 +41,9 @@ const clickBoardSuccess = function (response) {
     store.game.player = 'O'
   } else {
     store.game.player = 'X'
+  }
+  if (store.game.over !== true) {
+    $('#game-guide').text('Place ' + store.game.player + ' on board.')
   }
 }
 const clickBoardFailure = function () {
