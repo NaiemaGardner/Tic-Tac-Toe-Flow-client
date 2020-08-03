@@ -144,7 +144,7 @@ const checkDraw = function () {
       store.game.cells[2] !== '' && store.game.cells[3] !== '' &&
       store.game.cells[4] !== '' && store.game.cells[5] !== '' &&
       store.game.cells[6] !== '' && store.game.cells[7] !== '' &&
-      store.game.cells[8] !== '') {
+      store.game.cells[8] !== '' && store.game.over === false) {
     $('.board').hide()
     $('#game-guide').text('It is a draw! Start a new game.')
     store.game.over = true
