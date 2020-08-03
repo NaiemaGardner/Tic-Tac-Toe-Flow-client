@@ -33,9 +33,9 @@ p {
   color: $text-color;
   display: grid;
   grid-template: repeat(3, 1fr) / repeat(3, 1fr);
-  height: 450px;
+  height: 400px;
   margin: 0 auto;
-  width: 450px;
+  width: 400px;
 }
 
 .square {
