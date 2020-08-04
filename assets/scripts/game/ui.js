@@ -16,6 +16,7 @@ const exitStatsView = function () {
 // Game events
 const newGameSuccess = function (response) {
   $('.board').show()
+  $('.square').text('')
   $('#game-guide').text('Place X on the board.')
   $('#game-guide').show()
   store.game = response.game
