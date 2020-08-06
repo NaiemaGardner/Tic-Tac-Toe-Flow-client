@@ -5,7 +5,8 @@
 ## Technologies
 ------------------------------
 - JavaScript
-- HTML
+- jQuery
+- HTML/CSS
 - Bootstrap
 
 

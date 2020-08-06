@@ -2,7 +2,6 @@
 
 const authEvents = require('./auth/event')
 const gameEvents = require('./game/event')
-// const uiEvents = require('./game/ui')
 
 $(() => {
   // URL view
