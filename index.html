@@ -7,6 +7,8 @@
 
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
+    <link href="https://fonts.googleapis.com/css2?family=Sirin+Stencil&family=Turret+Road:wght@500&display=swap" rel="stylesheet">
+
     <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
 
     <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
@@ -15,14 +17,21 @@
     <header>
       <h1>Tic Tac Toe Flow</h1>
     </header>
-    <br>
+    <br >
     <div id="unauthenticated">
       <section>
-        <p>In this single-player tic-tac-toe game you can play against yourself or a nearby friend alternating between Players X and O. The goal is to place three player characters in a row, column or diagonal before your opponent does. Sign-in below to play a game, or several, and test your wits!</p>
+        <p>In this single-player game you can<br >  play against yourself or a nearby friend<br > alternating between Players X and O.<br > The goal is to place three player characters<br > in a row, column or diagonal before<br > your opponent does. Log in to play a game,<br > or several, and test your wits!</p>
       </section>
       <br>
       <p id="auth-attempt"></p>
 
+      <form id="sign-in">
+        <p>Returning User?</p>
+        <input type="email" name="credentials[email]" placeholder="Enter Email">
+        <input type="password" name="credentials[password]" placeholder="Enter Password">
+        <button type="submit">Let's Play!</button>
+      </form>
+      <br >
       <form id="sign-up">
         <p>New User?</p>
         <input type="email" name="credentials[email]" placeholder="Enter Email">
@@ -30,19 +39,10 @@
         <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
         <button type="submit">Sign Up!</button>
       </form>
-      <br>
-      <form id="sign-in">
-        <p>Returning User?</p>
-        <input type="email" name="credentials[email]" placeholder="Enter Email">
-        <input type="password" name="credentials[password]" placeholder="Enter Password">
-        <button type="submit">Let's Play!</button>
-      </form>
-
-
     </div>
 
     <div id="authenticated-main">
-      <h2>Welcome User!</h2>
+      <h2>Welcome Earthling!</h2>
 
       <p id="game-guide"></p>
 
@@ -57,7 +57,7 @@
         <div class="square"></div>
         <div class="square"></div>
     </div>
-    <br>
+    <!-- <br > -->
     <p id="main-attempt"></p>
 
     <nav id="buttons">
