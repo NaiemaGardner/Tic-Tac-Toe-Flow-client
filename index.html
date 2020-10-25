@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tic Tac Toe Flow</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+    <link href="https://fonts.googleapis.com/css2?family=Sirin+Stencil&family=Turret+Road:wght@500&display=swap" rel="stylesheet">
+
+    <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+
+    <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>Tic Tac Toe Flow</h1>
+    </header>
+    <br >
+    <div id="unauthenticated">
+      <section>
+        <p>In this single-player game you can<br >  play against yourself or a nearby friend<br > alternating between Players X and O.<br > The goal is to place three player characters<br > in a row, column or diagonal before<br > your opponent does. Log in to play a game,<br > or several, and test your wits!</p>
+      </section>
+      <br>
+      <p id="auth-attempt"></p>
+
+      <form id="sign-in">
+        <p>Returning User?</p>
+        <input type="email" name="credentials[email]" placeholder="Enter Email">
+        <input type="password" name="credentials[password]" placeholder="Enter Password">
+        <button type="submit">Let's Play!</button>
+      </form>
+      <br >
+      <form id="sign-up">
+        <p>New User?</p>
+        <input type="email" name="credentials[email]" placeholder="Enter Email">
+        <input type="password" name="credentials[password]" placeholder="Set Password">
+        <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+        <button type="submit">Sign Up!</button>
+      </form>
+    </div>
+
+    <div id="authenticated-main">
+      <h2>Welcome Earthling!</h2>
+
+      <p id="game-guide"></p>
+
+      <div class="board">
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+        <div class="square"></div>
+    </div>
+    <!-- <br > -->
+    <p id="main-attempt"></p>
+
+    <nav id="buttons">
+      <button type="button" id="new-game">New Game</button>
+
+      <button type="button" id="game-stats">Game Stats</button>
+
+      <button type="button" id="password">Change Password</button>
+
+      <button type="button" id="sign-out">Sign Out</button>
+    </nav>
+  </div>
+
+  <div id="authenticated-stats">
+    <p id="stats">STATS</p>
+    <button type="button" id="stats-return">Take Me Back!</button>
+  </div>
+
+  <div id="authenticated-password">
+    <form id="change-password">
+      <input type="text" name="passwords[old]" placeholder="Old Password">
+      <input type="text" name="passwords[new]" placeholder="New Password">
+      <button type="submit">Change Now!</button>
+    </form>
+  </div>
+ </body>
+</html>
